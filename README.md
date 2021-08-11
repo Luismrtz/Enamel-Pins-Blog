@@ -1,4 +1,10 @@
-# enamel-pin-blog
+# Enamel-Pin-Blog
+
+> Vue.js / Vuex / Firebase<br>
+
+
+
+
 
 ## Project setup
 ```
