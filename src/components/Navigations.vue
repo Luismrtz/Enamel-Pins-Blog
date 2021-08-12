@@ -144,5 +144,24 @@ header {
             color: #fff;
         }
     }
+
+//vue based entering/leaving  "-active && -leave-active" are built in vue properties
+    .mobile-nav-enter-active,
+    .mobile-nav-leave-active {
+        transition: all 1s ease;
+    }
+
+        // when transition starts, its starts at -250px
+    .mobile-nav-enter {
+        transform: translateX(-250px);
+    }
+    // then it transforms/translates to 0  ("enter to") is a vue property
+    .mobile-nav-enter-to {
+        transform: translateX(0);
+    }
+    // translates to -250 on leave ("-leave-to") is also a vue property
+    .mobile-nav-leave-to {
+        transform: translateX(-250px);
+    }
 }
 </style>
