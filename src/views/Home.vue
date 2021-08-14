@@ -53,14 +53,15 @@ export default {
             blogCoverPhoto: "salmon",
           },
         ],
-        sampleBlogCards: [
-          {blogTitle: "Blog card #1", blogCoverPhoto: "nightFroog", blogDate:"May 1, 2021"},
-          {blogTitle: "Blog card #2", blogCoverPhoto: "nightFroog", blogDate:"May 1, 2021"},
-          {blogTitle: "Blog card #3", blogCoverPhoto: "nightFroog", blogDate:"May 1, 2021"},
-          {blogTitle: "Blog card #4", blogCoverPhoto: "nightFroog", blogDate:"May 1, 2021"},
-        ],
+
 
       };
+    },
+    computed: {
+      sampleBlogCards() {
+        // attaching this returned value to this method
+        return this.$store.state.sampleBlogCards
+      }
     }
 }
 </script>
