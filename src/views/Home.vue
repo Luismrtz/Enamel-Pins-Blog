@@ -3,7 +3,7 @@
      <!--//? $emitting  from BlogPost -> HOME. [ex. similar to prop drilling func methods to get a response(as an argument), but starting from half way mark ]  refer to /ninja-tut-proj-2 &&  /simple-youtube-clone-hooks-->
              <!-- |  vs  |   -->
      <!--//? making these reusable by passing DOWN props FROM HOME -> BlogPost [ex. passing to banners] -->
-    <BlogPost :post="welcomeScreen"/>
+    <BlogPost v-if="!user" :post="welcomeScreen"/>
     <BlogPost :post="post" v-for="(post, index) in sampleBlogPost" :key="index" />
     <div class="blog-card-wrap">
       <div class="container">
@@ -13,7 +13,7 @@
         </div>
       </div>
     </div>
-    <div class="updates">
+    <div v-if="!user" class="updates">
       <div class="container">
         <h2>Never miss a post.  Register for your stuff and things now!</h2>
         <router-link class="router-button" to="#">
@@ -61,6 +61,11 @@ export default {
       sampleBlogCards() {
         // attaching this returned value to this method
         return this.$store.state.sampleBlogCards
+          
+  
+      },
+      user() {
+            return this.$store.state.user;
       }
     }
 }
